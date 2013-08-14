@@ -18,6 +18,7 @@ Modified & completely redesigned by Shahee Ilyas || http://shaheeilyas.com
 	TODO 
 	
 	OM Zeichen überlappt die navigation -> Link geht statt zu Kontakt auf Hauptseite und Hover funktioniert nicht.
+	Link Farben, auch für footer!
 	
 	
 */
@@ -35,8 +36,12 @@ Modified & completely redesigned by Shahee Ilyas || http://shaheeilyas.com
 @header-border: #FFBF00;
 @content-border: #D8D8D8;
 @content-back: #F1F8E0;
+@content-strong: #5F4C0B;
 @menu: #F781D8;
 @quote: #DBA901;
+@active-link: red;
+@link: #000;
+@link-hover: #000;
 
 
 /* fonts */
@@ -91,6 +96,8 @@ a:active, a:visited, a:hover {
 /* HEADER */
 
 #header {
+	position:relative;
+	z-index:0;
 	margin:0 auto;
 	height: 16em;
 	border-bottom:10px solid @header-border;
@@ -165,7 +172,7 @@ a:active, a:visited, a:hover {
 			}
 			strong {
 				font-size:1.25em;
-				color:red;
+				color:@content-strong;
 			}
 			em {
 				margin-left: 2em;
@@ -202,24 +209,21 @@ a:active, a:visited, a:hover {
 /* SIDEBAR */
 
 #sidebar {
+	position:relative;
+	z-index:1;
 	background: @back  /*#fff*/;
 	/*border-left: 1px dotted @textcolor;*/
 	/*float: right;*/
 	width: 600px;
 	margin:1em auto 0;
-	h2 {
-		/*font-weight: normal;
-		text-transform: lowercase;*/
-	}
+	h2 {}
 	/*h2:before {
 			content:"::: "; color:@textcolor;
 		}*/
 	ul{
 		list-style-type: none;
-		/*text-transform: lowercase;*/
 		.widget_pages h2 {display:none;}
 		li {
-			/*font-size: 0.75em;*/
 			display:inline;
 			margin: 10px 20px 0 0;
 		}
@@ -235,6 +239,7 @@ a:active, a:visited, a:hover {
 				a {text-decoration: none;color: @menu;}
 				a:hover {border-bottom: 2px solid @menu;}
 			}
+			.current_page_item a {color: @active-link;}
 		}
 
 	}
@@ -244,13 +249,11 @@ a:active, a:visited, a:hover {
 /* FOOTER */
 
 .credit {
-	clear:both;
 	color: @metacolor;
-	font-size: 12px;
-	letter-spacing:0.2px;
-	padding: 50px 0 0 0;
-	margin: 0 0 20px 0;
-	text-align: left;
-	a { color:#333;}
-	a:hover {color: #00BFFF;}
+	font-size: 0.75em;
+	letter-spacing: 0.2px;
+	padding: 3em 0 0 0;
+	text-align: center;
+/*	a {color:;}
+	a:hover {color:;}*/
 } 
