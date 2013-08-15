@@ -36,9 +36,12 @@
 	<div id="rap">	
 		<div id="header">
 			<a href="<?php bloginfo('url'); ?>/">
+				<h1>
 				<!-- <img id="himage" src="<?php bloginfo('stylesheet_directory'); ?>/img/logo_140.png" /> motoguzzi-logo-->
-				<h1>m<span class="om-sign">&#x950;</span>o<!-- <?php bloginfo('name'); ?> --></h1>
+				m<span class="om-sign">&#2384;</span>o<!-- <?php bloginfo('name'); ?> -->
+				</h1>
 			</a>
+			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 		</div>
 		<!-- end header -->
 		<?php get_sidebar(); ?>

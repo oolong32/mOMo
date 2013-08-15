@@ -18,6 +18,7 @@ Modified & completely redesigned by Shahee Ilyas || http://shaheeilyas.com
 	TODO 
 	
 	OM Zeichen überlappt die navigation -> Link geht statt zu Kontakt auf Hauptseite und Hover funktioniert nicht.
+	OM Zeichen wird in safari und chrome anders als in firefox angezeigt!
 	Link Farben, auch für footer!
 	
 	
@@ -31,7 +32,8 @@ Modified & completely redesigned by Shahee Ilyas || http://shaheeilyas.com
 @back: #D8F6CE; /* hellgrün: #ECF6CE, #E0F8EC, grau:#F0F0F0*/
 @textcolor: #393B0B;
 @metacolor: #666; /* sidebar ul ul, .content .meta,  footer (?) */
-@title: #9F81F7;
+@titlecolor: #9F81F7;
+@subtitlecolor: #9F81F7;
 @om: #F781D8;
 @header-border: #FFBF00;
 @content-border: #D8D8D8;
@@ -46,9 +48,11 @@ Modified & completely redesigned by Shahee Ilyas || http://shaheeilyas.com
 
 /* fonts */
 
-@menu-font: arial;
-@title-font:verdana;
-@paragraph-font:georgia;
+@menu-font: georgia;
+@title-font: verdana;
+@subtitle-font: georgia;
+@paragraph-font: georgia;
+@om-font: georgia;
 
 
 
@@ -99,7 +103,8 @@ a:active, a:visited, a:hover {
 	position:relative;
 	z-index:0;
 	margin:0 auto;
-	height: 16em;
+	padding-top:1.5em;
+	height: 20em;
 	border-bottom:10px solid @header-border;
 	border-style:none none double none;
 		
@@ -112,27 +117,28 @@ a:active, a:visited, a:hover {
 		
 	h1 {
 		text-align:center;
-		color: @title;
+		color: @titlecolor;
 		font-size: 55px;
 		line-height:1em;
 		margin-bottom: 30px;
 		font-family: @title-font;
 		margin-bottom: 2em;
 		.om-sign {
+			font-family: @om-font,georgia,serif;
 			font-size:300px; /*je nach schrift zu variieren*/
 			position:relative;
 			color:@om;
 			top:100px; /*je nach schrift zu variieren*/
 			}
 	}
-	a {
-		color: @textcolor;
-		text-decoration: none;
+	h2 {
+		text-align:center;
+		color:@subtitlecolor;
+		font-family:@subtitle-font;
+		font-weight:normal;
+		font-style:italic;
 	}
-	a:hover {
-		text-decoration: none;
-	}
-/*	#himage {float: right;}*/
+	a,a:hover {text-decoration: none;}
 }
 
 /* END HEADER */
@@ -215,7 +221,7 @@ a:active, a:visited, a:hover {
 	/*border-left: 1px dotted @textcolor;*/
 	/*float: right;*/
 	width: 600px;
-	margin:1em auto 0;
+	margin:1.25em auto;
 	h2 {}
 	/*h2:before {
 			content:"::: "; color:@textcolor;
@@ -225,19 +231,19 @@ a:active, a:visited, a:hover {
 		.widget_pages h2 {display:none;}
 		li {
 			display:inline;
-			margin: 10px 20px 0 0;
+			margin-right: 1.5em;
 		}
 		ul {
 			font-family: @menu-font;
 			font-size:1.25em;
 			font-variant: normal;
-			font-weight: bold;
+			font-weight:normal;
 			list-style-type: none;
 			text-align: left;
 			li {
 				border: 0;
 				a {text-decoration: none;color: @menu;}
-				a:hover {border-bottom: 2px solid @menu;}
+				a:hover {border-bottom: 1px solid @menu;}
 			}
 			.current_page_item a {color: @active-link;}
 		}
